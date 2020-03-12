@@ -1,0 +1,99 @@
+*{
+    margin: 0 auto;
+}
+.ind{
+    margin-top: 75px;
+    text-align:center;
+}
+.ind h1{
+    margin-bottom: 30px;
+    font-size: 75px;
+}
+.ind button{
+    width: 150px;
+    height: 50px;
+    background-color: purple;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 125px;
+}
+.add{
+    width: 350px;
+    margin: 40px 0px 100px 30px;
+    font-size: 18px;
+}
+.add p{
+    margin-bottom: 20px;
+}
+.add input{
+    font-size: 18px;
+    float: right;
+}
+.all{
+    width: 350px;
+    display: inline-block;
+    margin-left: 50px;
+    vertical-align: top;
+}
+.all h1{
+    margin-bottom: 25px;
+}
+.all h2{
+    margin-bottom: 25px;
+    margin-right:50px;
+    display: inline-block;
+}
+.all p{
+    margin-bottom: 50px;
+    font-size: 18px;
+    display: inline-block;
+}
+.all .e{
+    float: right;
+    width: 75px;
+    height: 35px;
+    background-color:#8598aa;
+    font-size: 18px;
+    color: white;
+    border-radius: 6px;
+    padding:0px;
+}
+.all .d{
+    float: right;
+    width: 75px;
+    height: 35px;
+    background-color:#a3979d;
+    font-size: 18px;
+    color: white;
+    border-radius: 6px;
+    padding: 0px;
+}
+.one{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border:1px solid black;
+    padding: 15px;
+    display: inline-block;
+}
+.edit{
+    width:400px;
+    margin-right: 750px;
+    margin-top:200px;
+    font-size: 18px;
+    display:inline-block;
+    float: right;
+}
+.edit form{
+    display: inline-block;
+    width:350px;
+}
+.edit input{
+    float:right;
+    font-size: 18px;
+}
+.edit h1{
+    margin-bottom:25px;
+}
+.edit p{
+    margin-bottom: 20px;
+}

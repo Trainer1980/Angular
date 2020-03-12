@@ -1,0 +1,14 @@
+<div class="ind">
+<h1>Restful Task API</h1>
+<button (click) = "onClickFetchTasks()">Get All Tasks</button>
+</div>
+<div class="all">
+<h1>All the Tasks:</h1>
+<p *ngFor="let task of tasks">{{task.title}} <button (click) = "onClickFetchOneTask(task._id)">Show</button></p>
+</div>
+<div class="one">
+<h1 *ngIf="taskToShow">Individual Task:</h1>
+<p *ngIf="taskToShow">{{taskToShow.title}}</p>
+<p *ngIf="taskToShow">{{taskToShow.description}}</p>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,32 @@
+<!--<div class="ind">
+<h1>Restful Task API</h1>
+<button (click) = "onClickFetchTasks()">Get All Tasks</button>
+</div>-->
+<div class="add">
+    <form (submit)="onSubmit()">
+        <h1>New Task</h1>
+        <p> {{ newTask | json }} </p>
+        <p><label for="title">Title: </label><input type="text" name="title" [(ngModel)]="newTask.title" /></p>
+        <p><label for="desc">Description: </label><input type="text" name="description" [(ngModel)]="newTask.description" /></p>
+        <input type="submit" value="Create Task" />
+    </form>
+</div>
+<div *ngIf="taskToEdit" class="edit">
+    <form (submit)="onSubmitEdit(taskToEdit._id)">
+        <h1>Edit Task</h1>
+        <p><label for="title">Title: </label><input type="text" name="title" [(ngModel)]="taskToEdit.title"/></p>
+        <p><label for="desc">Description: </label><input type="text" name="description" [(ngModel)]="taskToEdit.description" /></p>
+        <input type="submit" value="Update Task" />
+</div>
+<ng-template #elseBlock></ng-template>
+<div class="all">
+<h1>Task List:</h1>
+<div *ngFor="let task of tasks" class="one">
+    <h2>{{task.title}}</h2>
+    <button (click) = "onClickEditTask(task._id)" class="e">Edit</button>
+    <p>{{task.description}}</p>
+    <button (click) = "onClickDeleteTask(task._id)" class="d">Delete</button>
+</div>
+
+
+<router-outlet></router-outlet>

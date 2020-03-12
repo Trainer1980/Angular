@@ -1,0 +1,45 @@
+*{
+    margin: 0 auto;
+    text-align: center;
+}
+.ind{
+    margin-top: 75px;
+}
+.ind h1{
+    margin-bottom: 30px;
+    font-size: 75px;
+}
+.ind button{
+    width: 150px;
+    height: 50px;
+    background-color: purple;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 125px;
+}
+.all h1{
+    margin-bottom: 25px;
+}
+.all p{
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.all button{
+    margin-left: 120px;
+    width: 75px;
+    height: 50px;
+    background-color: rgb(69, 178, 221);
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+}
+.one{
+    margin-top: 50px;
+}
+.one h1{
+    margin-bottom: 25px;
+}
+.one p{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
