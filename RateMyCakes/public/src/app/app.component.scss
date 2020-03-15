@@ -1,0 +1,35 @@
+.sm_img{
+    width: 200px;
+    height: 200px;
+}
+.add{
+    display: inline-block;
+    width: 500px;
+    height: 400px;
+}
+.list{
+    display: inline-block;
+    width: 700px;
+    height: 500px;
+    vertical-align: top;
+    overflow-y: scroll;
+    form{
+        display:inline-block;
+        width: 375px;
+        margin-left: 50px;
+        vertical-align: top;
+        input{
+            float: right;
+        }
+        textarea{
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+        select{
+            margin-left: 20px;
+        }
+    }
+    ul{
+        margin-bottom: 40px;
+    }
+}

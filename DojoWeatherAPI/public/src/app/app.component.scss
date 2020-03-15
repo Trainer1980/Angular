@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.weather-box {
+    border: 2px solid #000000;
+    padding: 20px;
+}
+.header {
+    h1{
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+}
+.city{
+    ul{
+        list-style: none;
+        li{
+            display: inline-block;
+            font-size: 18px;
+            margin-left: 175px;
+            color: blue;
+            text-decoration: underline;
+        }
+    }
+    margin-bottom: 40px;
+}

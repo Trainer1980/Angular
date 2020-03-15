@@ -1,0 +1,11 @@
+<div class="details">
+    <h1>Baked by {{onClickFetchOneCake.baker}}</h1>
+    <img src="{{onClickFetchOneCake.image}}" alt="cake">
+    <div class="rate">
+        <h3>Average rating: {{average}} stars</h3>
+        <ul *ngFor="let review of onClickFetchOneCake.reviews">
+            <h4>{{review.comment}}</h4>
+            <h4>{{review.rating}} stars</h4>
+        </ul>
+    </div>
+</div>
