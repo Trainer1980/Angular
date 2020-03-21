@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Submit a movie and your review</h2>
+        <div class="errors">
+            <ul>
+                <li *ngFor="let i of errors" >{{i}}</li>
+            </ul>
+        </div>
+        <form (submit)="onSubmit()">
+            <table>
+                <tr>
+                    <td>Movie Title:</td>
+                    <td><input type="text" 
+                    name="newMovie.title" 
+                    required
+                    minlength="3"
+                    [(ngModel)]="newMovie.title"
+                    #title="ngModel"
+                    ></td>
+                    <td class="errors" *ngIf="title.invalid">
+                    <div *ngIf="title.errors.required">Title is required</div>
+                    <div *ngIf="title.errors.minlength">Title must be at least 3 characters long.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your Name:</td>
+                    <td><input type="text" 
+                        name="newReview.name" 
+                        required minlength="3" 
+                        [(ngModel)]="newReview.name" 
+                        #name="ngModel"
+                    ></td>
+                    <td class="errors" *ngIf="name.invalid">
+                        <div *ngIf="name.errors.required">Name is required</div>
+                        <div *ngIf="name.errors.minlength">Name must be at least 3 characters long.</div>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Rating:</td>
+                    <td>
+                    <select 
+                    name="newReview.rating" 
+                    required
+                    [(ngModel)]="newReview.rating" 
+                    #rating="ngModel"
+                    >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    </td>
+                    <td class="errors" *ngIf="rating.invalid">
+                        <div *ngIf="rating.errors.required">Rating is required</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your Review:</td>
+                    <td class="textbox"><textarea 
+                    name="newReview.content" 
+                    required
+                    minlength="3"
+                    [(ngModel)]="newReview.content"
+                    #content="ngModel"
+                    ></textarea></td>
+                    <td class="longer" *ngIf="content.invalid">
+                        <div *ngIf="content.errors.required">Review content is required</div>
+                        <div *ngIf="content.errors.minlength">Review content must be at least 3 characters long.</div>
+                        </td>
+                </tr>
+                <tr>
+                    <td  (click)="goHome()" ><button>Cancel</button></td>
+                    <td><input class="btn btn-success" type="submit" value="Submit"></td>
+                </tr>
+                </table>
+            </form>
+    </div>
+    
+</body>
+</html>

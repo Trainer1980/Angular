@@ -7,7 +7,8 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
   title = 'app'
-  tasks = [];
+  tasks: object;
+  show_task: any;
   constructor(private _httpService: HttpService){}
   ngOnInit(){
     this.getTasksFromService();

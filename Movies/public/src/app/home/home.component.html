@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button class="addbutton" [routerLink]="'/new'" >Add a new Movie</button>
+        <h2>Movie List</h2>
+        <table class="table">
+            <tr>
+                <th class="title">Movie Title</th>
+                <th class="action">Available Action</th>
+            </tr>
+            <tr *ngFor="let movie of movies">
+                <td>{{movie.title}}</td>
+                <td><button class="btn btn-warning" [routerLink]="['/movies/', movie._id]">Read Reviews</button>  <button class="btn btn-warning" [routerLink]="['/review']">Write Review</button></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</body>
+</html>

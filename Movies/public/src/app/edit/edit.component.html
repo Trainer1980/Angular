@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Submit your review for {{ movieToEdit.title }}</h2>
+    <form (submit)="createReview()">
+        <table>
+            <tr>
+                <td>Your Name:</td>
+                <td><input 
+                    type="text" 
+                    name="name" 
+                    required
+                    minlength="2"
+                    [(ngModel)]="newReview.name"
+                    #name='ngModel'
+                    ></td>
+                <td class="errors" *ngIf="name.errors">
+                    <p *ngIf="name.errors['required']">Name is required</p>
+                    <p *ngIf="name.errors['minlength']">Name must be at least 3 characters</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Rating:</td>
+                <td>
+                    <select 
+                    name="rating" 
+                    required 
+                    [(ngModel)]="newReview.rating" 
+                    #rating="ngModel">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </select>
+                </td>
+                <td class="errors" *ngIf="rating.invalid"><p *ngIf="rating.errors.required">Rating is required</p></td>
+            </tr>
+            <tr>
+                <td>Review:</td>
+                <td><textarea 
+                    name="content"
+                    required
+                    minlength="5"  
+                    [(ngModel)]="newReview.content"
+                    #content="ngModel"
+                ></textarea></td>
+                <td class="errors" *ngIf="content.invalid">
+                    <p *ngIf="content.errors.required">Content is required</p>
+                    <p *ngIf="content.errors.minlength">Review content must be at least 3 characters</p>
+                </td>
+            </tr>
+            <tr>
+                <td (click)="goHome()" ><button>Cancel</button></td>
+                <td><input class="btn btn-success" type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

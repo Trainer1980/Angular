@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Reviews for {{movieToShow.title}} </h2>
+        <div class="addbutton">
+            <button (click)="deleteMovie(movieToShow._id)" >Delete {{movietoShow.title}}</button>
+            
+            <button [routerLink]="['/review']" >Write Review</button>
+        </div>
+        <table class="table">
+            <tr>
+                <th class="name">Reviewer</th>
+                <th class="rating">Stars</th>
+                <th class="content">Reviews</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let i of movieToShow.reviews" >
+                <td>{{i.name}}</td>
+                <td>{{i.rating}}</td>
+                <td>{{i.content}}</td>
+                <td><button (click)="deleteReview(i._id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</body>
+</html>
