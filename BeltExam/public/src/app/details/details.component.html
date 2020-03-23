@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div *ngIf="restaurantToShow" class="container">
+        <h2>Reviews for {{restaurantToShow.name}} </h2>
+        <div>
+            <button [routerLink]="['/restaurants', rest_id, 'review']" class="btn btn-secondary">Write Review</button>
+            <button [routerLink]="['/restaurants']" class="btn btn-secondary">All Restaurants</button>
+        </div>
+        <table class="table table-sm">
+            <tr>
+                <th>Customer</th>
+                <th>Stars</th>
+                <th>Description</th>
+            </tr>
+            <tr *ngFor="let i of restaurantToShow.reviews" >
+                <td>{{i.customer}}</td>
+                <td>{{i.rating}}</td>
+                <td>{{i.content}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</body>
+</html>

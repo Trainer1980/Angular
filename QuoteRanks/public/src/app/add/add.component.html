@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="add">
+        <a [routerLink]="['/home']"><h2>Home</h2></a>
+        <h2>Add a new author:</h2>
+        <form (submit)="onSubmitCreate()">
+            <p><label for="name">Name: </label>
+                <input type="text" name="newOne.name" 
+                required
+                minlength="3"
+                [(ngModel)]="newOne.name"
+                #name="ngModel"></p>
+                <div *ngIf="name.invalid" class="alert alert-danger">
+                    <div *ngIf="name.errors.required">
+                        Name is required.
+                    </div>
+                    <div *ngIf="name.errors.minlength">
+                        Name must be at least 3 characters long.
+                    </div>
+                </div>
+            <button type="button" class="btn btn-primary" [routerLink]="['/home']">Cancel</button>
+            <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

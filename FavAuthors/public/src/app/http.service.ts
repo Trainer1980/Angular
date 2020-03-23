@@ -22,6 +22,6 @@ export class HttpService {
     return this._http.put('/authors/' +id, authorToShow);
   }
   deleteAuthor(id){
-    return this._http.delete('authors/' +id);
+    return this._http.delete('/authors/' +id);
   }
 }
