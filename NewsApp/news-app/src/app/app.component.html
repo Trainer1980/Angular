@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="news">
+    <mat-toolbar color="primary">
+      <button mat-button (click)="sidenav.open()" (dblclick)="sidenav.close()"><mat-icon>menu</mat-icon></button>
+      <span>Welcome To Holly's Top NewsApp</span>  
+    </mat-toolbar>
+    <mat-sidenav-container class="container">
+      <mat-sidenav #sidenav class="sidenav">
+        <mat-list class="list-nav">
+            <mat-list-item class="list" *ngFor="let source of srces" (click)="searchArts(source.id); sidenav.close();">
+              <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="header-img"></div>
+              <span class="src-name"> {{source.name}}</span>
+            </mat-list-item>
+        </mat-list>
+      </mat-sidenav>
+      <mat-card class="card"  *ngFor="let article of arts">
+        <mat-card-header>
+          <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="header-img"></div>
+          <mat-card-title class="title" [innerHTML]="article.title"></mat-card-title>
+          <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="img-art" src={{article.urlToImage}} alt="">
+        <mat-card-content>
+          <p [innerHTML]="article.description"></p>
+        </mat-card-content>
+        <mat-card-actions class="action-btn">
+          <a mat-button color="primary" href={{article.url}} target="_blank" ><mat-icon>visibility</mat-icon> Read More</a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-sidenav-container>
+  </div>
+</body>
+</html>
