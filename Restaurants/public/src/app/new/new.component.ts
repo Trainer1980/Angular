@@ -19,7 +19,6 @@ export class NewComponent implements OnInit {
 
   ngOnInit() {
     this._route.params.subscribe((params: Params) => {
-      console.log(params['id'])
       this.newRestaurant = {name: "", cuisine: ""}
     });
     

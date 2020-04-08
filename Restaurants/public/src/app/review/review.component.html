@@ -10,9 +10,10 @@
 </head>
 <body>
     <div *ngIf="restaurantToEdit" class="container">
-        <h2>Write a review for {{restaurantToEdit.name}}</h2>
+        <h2>Write a Review for:</h2>
+        <h3>{{restaurantToEdit.name}}</h3> 
         <form (submit)="onSubmitReview()" #myForm='ngForm'>
-            <p><label for="customer">Your name: </label>
+            <p><label for="customer">Your Name: </label>
                 <input type="text" 
                 name="newRating.customer" 
                 required
@@ -48,7 +49,7 @@
                 required
                 minlength="3"
                 [(ngModel)]="newRating.content" 
-                #content="ngModel" id="content" cols="30" rows="5"></textarea></p>
+                #content="ngModel" id="content" cols="20" rows="3"></textarea></p>
                 <div *ngIf="content.invalid" class="alert alert-danger">
                     <div *ngIf="content.errors.required">
                         Review is required.

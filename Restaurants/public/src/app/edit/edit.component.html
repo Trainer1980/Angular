@@ -9,8 +9,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="edit">
-        <h2>Edit this restaurant:</h2>
+    <div class="container">
+        <h2>Edit Restaurant:</h2>
+        <h3>{{restaurantToEdit.name}}</h3>
         <form (submit)="onSubmitEdit()" #myForm='ngForm'>
             <p><label for="name">Name: </label>
                 <input type="text" name="restaurantToEdit.name" 
